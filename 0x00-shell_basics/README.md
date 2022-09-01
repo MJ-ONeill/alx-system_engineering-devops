@@ -13,3 +13,4 @@
 13 symbolic link
 14 copy html
 15 lets move
+16 clean emacs

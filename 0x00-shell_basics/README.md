@@ -5,3 +5,4 @@
 5- list files digit only
 6- first directory
 7move the file
+8 first delete

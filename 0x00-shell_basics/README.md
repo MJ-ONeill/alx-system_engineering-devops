@@ -1,1 +1,4 @@
-task 4 readme
+0-current working directory
+2-bring me home
+3-listfiles
+4-list more files

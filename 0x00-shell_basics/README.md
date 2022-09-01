@@ -10,3 +10,4 @@
 10 back
 11 lists
 12 file type
+13 symbolic link

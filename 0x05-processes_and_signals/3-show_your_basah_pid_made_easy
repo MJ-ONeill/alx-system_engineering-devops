@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# this display the PID, along with process whose name contain the word bash
+# Not allowed to use ps
+
+pgrep -l bash

@@ -1,18 +1,2 @@
-Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
-Hit:2 http://archive.ubuntu.com/ubuntu focal-updates InRelease
-Hit:3 http://archive.ubuntu.com/ubuntu focal-backports InRelease
-Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
-Hit:5 http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu focal InRelease
-Ign:6 http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu focal InRelease
-Err:7 http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu focal Release
-  404  Not Found [IP: 185.125.190.52 80]
-Reading package lists...
-E: The repository 'http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu focal Release' does not have a Release file.
-Reading package lists...
-Building dependency tree...
-Reading state information...
-nginx is already the newest version (1.18.0-0ubuntu1.4).
-0 upgraded, 0 newly installed, 0 to remove and 168 not upgraded.
-./0-nginx_likes_port_80: line 6: ufw: command not found
-./0-nginx_likes_port_80: line 8: default: command not found
-./0-nginx_likes_port_80: line 9: server: command not found
+ * Restarting nginx nginx
+   ...fail!

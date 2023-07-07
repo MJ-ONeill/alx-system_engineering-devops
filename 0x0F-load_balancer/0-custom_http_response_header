@@ -2,31 +2,10 @@
 # Configure web-02 to be identical to web-01
 # Configure Nginx so that it's HTTP response contains a custom header (on web-01 and web-02)
 
-apt-get update 
-apt-get install -y nginx
-sudo ufw allow "Nginx HTTP"
-sudo mkdir -p /var/www/html
-sudo chmod -R 755 /var/www
-echo 'Hello World!' > /var/www/html/404.html
-echo "Ceci n'est pas une page > /var/www/html/404.html
-server_config=\
-"server {
-listen 80 default_server;
-listen [::]:80 default_server;
-root /var/www/html;
-index index.html index.htm index.nginx-debian.html;
-server_name _;
-add_header X-Served-By \$hostname;
-location / {
-	try_files \$uri \$uri/ =404;
-	}
-if (\$request_filename ~ redirect_me){
-rewrite ^ https://youtube.com parmeter;
-}
-error_page 404 /404.html;
-location = /404.html {
-internal;
-}
- }"
-sudo echo "$server_config" > /etc/nginx/sites-enabled/default
-sudo service nginx restart
+apt-get -y update
+apt-get -y install nginx
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo " Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https://mj-oneill.netlify.app/ permanent;\n\n\terror_page 404 \/custom_404.html;\n\tlocation = \/custom_404.html {\n\t\troot\/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}/" /etc/nginx/sites-available/default
+sed -i "s/include \/etc\/nginx\/sites-enabled\/\*;/include \/etc\/nginx\/sites-enabled\/\*;\n\tadd_header X-Served-By \"$HOSTNAME\";/" /etc/nginx.conf
+service nginx start

@@ -18,4 +18,4 @@ if __name__ == "__main__":
 
     for todo in todos:
         if todo.get("completed") is True:
-            print("\t{}".format(todo.get("TASK_TITLE)))
+            print("\t{}".format(todo.get("TASK_TITLE")))

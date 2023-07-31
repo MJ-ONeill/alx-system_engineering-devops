@@ -17,5 +17,5 @@ if __name__ == "__main__":
         user.get("name"), completed, len(todos)))
 
     for todo in todos:
-        if todo.get("completed"):
-            print("\t{}".format(todo.get("title")))
+        if todo.get("completed") is True:
+            print("\t{}".format(todo.get("TASK_TITLE)))
